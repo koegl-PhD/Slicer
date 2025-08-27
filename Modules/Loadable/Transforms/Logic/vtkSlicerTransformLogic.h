@@ -216,11 +216,27 @@ protected:
   /// \sa GetVisualization3d
   static void GetContourVisualization3d(vtkPolyData* output_RAS, vtkMRMLTransformDisplayNode* displayNode, vtkMatrix4x4* roiToRAS, int* roiSize);
 
+  /// Generate Jacobian Determinant slice for 2D transform visualization
+  /// \sa GetVisualization2d
+  static void GetDeterminantVisualization2d(vtkPolyData* output_RAS,
+                                              vtkMRMLTransformDisplayNode* displayNode,
+                                              vtkMatrix4x4* sliceToRAS,
+                                              double* fieldOfViewOrigin,
+                                              double* fieldOfViewSize);
+
+  /// Generate Jacobian Determinant volume for 3D transform visualization
+  /// \sa GetVisualization3d
+  static void GetDeterminantVisualization3d(vtkPolyData* output_RAS,
+                                              vtkMRMLTransformDisplayNode* displayNode,
+                                              vtkMatrix4x4* roiToRAS,
+                                              int* roiSize);
+                                              
   /// Return the number of samples in each grid
   static int GetGridSubdivision(vtkMRMLTransformDisplayNode* displayNode);
 
   /// Add lines to the gridPolyData to make it a grid. If warpedGrid is specified then a warped grid is generated, too.
   static void CreateGrid(vtkPolyData* outputGrid_RAS, vtkMRMLTransformDisplayNode* displayNode, int numGridPoints[3], vtkPolyData* outputWarpedGrid_RAS = nullptr);
+
 
   /// Takes samples from the displacement field specified by a point set
   /// and stores it in an unstructured grid.

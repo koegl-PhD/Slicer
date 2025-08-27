@@ -1235,6 +1235,31 @@ void vtkSlicerTransformLogic::GetContourVisualization3d(vtkPolyData* output, vtk
 }
 
 //----------------------------------------------------------------------------
+void vtkSlicerTransformLogic::GetDeterminantVisualization2d(vtkPolyData* output_RAS,
+                                                            vtkMRMLTransformDisplayNode* displayNode,
+                                                            vtkMatrix4x4* sliceToRAS,
+                                                            double* fieldOfViewOrigin,
+                                                            double* fieldOfViewSize)
+{ // TODO_fred
+  // use each variable once so we don't get compiler warnings
+  (void)output_RAS;
+  (void)displayNode;
+  (void)sliceToRAS;
+  (void)fieldOfViewOrigin;
+  (void)fieldOfViewSize;
+  // This function is not implemented yet
+}
+//----------------------------------------------------------------------------
+void GetDeterminantVisualization3d(vtkPolyData* output_RAS, vtkMRMLTransformDisplayNode* displayNode, vtkMatrix4x4* roiToRAS, int* roiSize)
+{ // TODO_fred
+  // use each variable once so we don't get compiler warnings
+  (void)output_RAS;
+  (void)displayNode;
+  (void)roiToRAS;
+  // This function is not implemented yet
+}
+
+//----------------------------------------------------------------------------
 bool vtkSlicerTransformLogic::GetVisualization2d(vtkPolyData* output_RAS,
                                                  vtkMRMLTransformDisplayNode* displayNode,
                                                  vtkMRMLSliceNode* sliceNode,
@@ -1286,6 +1311,7 @@ bool vtkSlicerTransformLogic::GetVisualization2d(vtkPolyData* output,
     case vtkMRMLTransformDisplayNode::VIS_MODE_GLYPH: GetGlyphVisualization2d(output, displayNode, sliceToRAS, fieldOfViewOrigin, fieldOfViewSize, samplePositions_RAS); break;
     case vtkMRMLTransformDisplayNode::VIS_MODE_GRID: GetGridVisualization2d(output, displayNode, sliceToRAS, fieldOfViewOrigin, fieldOfViewSize); break;
     case vtkMRMLTransformDisplayNode::VIS_MODE_CONTOUR: GetContourVisualization2d(output, displayNode, sliceToRAS, fieldOfViewOrigin, fieldOfViewSize); break;
+    case vtkMRMLTransformDisplayNode::VIS_MODE_DETERMINANT: GetDeterminantVisualization2d(output, displayNode, sliceToRAS, fieldOfViewOrigin, fieldOfViewSize); break;
   }
 
   return true;
@@ -1433,6 +1459,9 @@ bool vtkSlicerTransformLogic::GetVisualization3d(vtkPolyData* output,
       displayNode->SetBackfaceCulling(0);
       displayNode->SetOpacity(displayNode->GetContourOpacity());
       GetContourVisualization3d(output, displayNode, roiToRAS, roiSize);
+      break;
+    case vtkMRMLTransformDisplayNode::VIS_MODE_DETERMINANT:
+      // TODO_fred
       break;
   }
 

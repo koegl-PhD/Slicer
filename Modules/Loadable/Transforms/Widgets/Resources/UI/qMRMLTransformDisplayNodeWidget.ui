@@ -230,6 +230,47 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="DeterminantToggle">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Visualize transform by the Jacobian Determinant of the displacement field</string>
+          </property>
+          <property name="text">
+           <string>Determinant</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../qSlicerTransformsModuleWidgets.qrc">
+            <normaloff>:/Icons/DeterminantIcon.png</normaloff>:/Icons/DeterminantIcon.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
       <item row="2" column="1">

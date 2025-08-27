@@ -436,6 +436,7 @@ const char* vtkMRMLTransformDisplayNode::ConvertVisualizationModeToString(int mo
     case VIS_MODE_GLYPH: return "GLYPH";
     case VIS_MODE_GRID: return "GRID";
     case VIS_MODE_CONTOUR: return "CONTOUR";
+    case VIS_MODE_DETERMINANT: return "DETERMINANT";
     default: return "";
   }
 }

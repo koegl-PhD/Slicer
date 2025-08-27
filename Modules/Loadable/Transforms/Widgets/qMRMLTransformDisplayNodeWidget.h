@@ -63,6 +63,7 @@ public slots:
   void setGlyphVisualizationMode(bool);
   void setGridVisualizationMode(bool);
   void setContourVisualizationMode(bool);
+  void setDeterminantVisualizationMode(bool);
 
   void updateGlyphSourceOptions(int sourceOption);
   void regionNodeChanged(vtkMRMLNode* node);
